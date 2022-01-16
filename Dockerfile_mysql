@@ -1,0 +1,30 @@
+FROM mysql:5.7
+
+WORKDIR /home
+
+RUN  mkdir tomcat && mkdir java
+
+COPY jdk1.8.0_131 ./jdk
+
+COPY apache-tomcat-8.5.73 ./tomcat
+
+COPY activiti-6.0.0/wars/* ./tomcat/webapps/
+
+
+COPY mysql/conf/my.cnf  /etc/my.cnf
+
+COPY run.sh        ./run.sh
+
+ENV JAVA_HOME=/home/jdk/bin
+
+ENV JRE_HOME=/home/jdk/jre
+
+ENV MYSQL_ROOT_PASSWORD=root
+
+ENV MYSQL_DATABASE=activiti
+
+RUN chmod +x /home/tomcat/bin/catalina.sh
+
+
+CMD ["sh","/home/run.sh"]
+
