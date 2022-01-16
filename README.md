@@ -12,3 +12,4 @@ jar -cvfM0 xx.war .
 ```
 
 数据库账号密码：root/root
+RESTAPI user/password  kemit kemit
