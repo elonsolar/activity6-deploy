@@ -1,4 +1,4 @@
-# activity6-deploy
+# activiti6-deploy
 
 基于mysql 镜像，创建 activiti6.0 rest api
 
